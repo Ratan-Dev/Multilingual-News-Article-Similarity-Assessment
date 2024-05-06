@@ -1,0 +1,60 @@
+Model: "model_14"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_29 (InputLayer)          [(None, 768)]        0           []                               
+                                                                                                  
+ input_30 (InputLayer)          [(None, 768)]        0           []                               
+                                                                                                  
+ dense_46 (Dense)               (None, 256)          196864      ['input_29[0][0]']               
+                                                                                                  
+ dense_47 (Dense)               (None, 256)          196864      ['input_30[0][0]']               
+                                                                                                  
+ batch_normalization_6 (BatchNo  (None, 256)         1024        ['dense_46[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ batch_normalization_7 (BatchNo  (None, 256)         1024        ['dense_47[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ dropout_6 (Dropout)            (None, 256)          0           ['batch_normalization_6[0][0]']  
+                                                                                                  
+ dropout_7 (Dropout)            (None, 256)          0           ['batch_normalization_7[0][0]']  
+                                                                                                  
+ dense_48 (Dense)               (None, 128)          32896       ['dropout_6[0][0]']              
+                                                                                                  
+ dense_49 (Dense)               (None, 128)          32896       ['dropout_7[0][0]']              
+                                                                                                  
+ batch_normalization_8 (BatchNo  (None, 128)         512         ['dense_48[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ batch_normalization_9 (BatchNo  (None, 128)         512         ['dense_49[0][0]']               
+ rmalization)                                                                                     
+                                                                                                  
+ dropout_8 (Dropout)            (None, 128)          0           ['batch_normalization_8[0][0]']  
+                                                                                                  
+ dropout_9 (Dropout)            (None, 128)          0           ['batch_normalization_9[0][0]']  
+                                                                                                  
+ dense_50 (Dense)               (None, 64)           8256        ['dropout_8[0][0]']              
+                                                                                                  
+ dense_51 (Dense)               (None, 64)           8256        ['dropout_9[0][0]']              
+                                                                                                  
+ batch_normalization_10 (BatchN  (None, 64)          256         ['dense_50[0][0]']               
+ ormalization)                                                                                    
+                                                                                                  
+ batch_normalization_11 (BatchN  (None, 64)          256         ['dense_51[0][0]']               
+ ormalization)                                                                                    
+                                                                                                  
+ dropout_10 (Dropout)           (None, 64)           0           ['batch_normalization_10[0][0]'] 
+                                                                                                  
+ dropout_11 (Dropout)           (None, 64)           0           ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ dot_14 (Dot)                   (None, 1)            0           ['dropout_10[0][0]',             
+                                                                  'dropout_11[0][0]']             
+                                                                                                  
+ dense_52 (Dense)               (None, 1)            2           ['dot_14[0][0]']                 
+                                                                                                  
+==================================================================================================
+Total params: 479,618
+Trainable params: 477,826
+Non-trainable params: 1,792
+__________________________________________________________________________________________________
